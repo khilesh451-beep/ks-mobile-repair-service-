@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KS Mobile Repairing Service</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#0a0a0a;
+color:white;
+text-align:center;
+}
+
+/* HEADER */
+.header{
+padding:15px;
+font-size:22px;
+font-weight:bold;
+color:#00f2c2;
+}
+
+/* POSTER FIX */
+.poster img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+/* SECTION */
+.section{padding:15px;}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.card{
+background:#111;
+padding:12px;
+border-radius:12px;
+cursor:pointer;
+}
+
+/* DETAIL */
+#detail{
+display:none;
+padding:20px;
+}
+
+.detail-box{
+background:#111;
+padding:20px;
+border-radius:15px;
+}
+
+/* BUTTON */
+.btn{
+background:#00f2c2;
+color:black;
+padding:10px 20px;
+border-radius:10px;
+display:inline-block;
+margin-top:10px;
+text-decoration:none;
+}
+
+/* SOCIAL */
+.social{
+margin:20px;
+}
+
+.social a{
+background:#00f2c2;
+color:black;
+padding:10px 15px;
+margin:5px;
+border-radius:20px;
+text-decoration:none;
+display:inline-block;
+}
+
+/* FOLLOW BUTTON */
+.follow{
+margin:20px;
+}
+
+.follow a{
+background:#E1306C;
+color:white;
+padding:12px 20px;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+display:inline-block;
+}
+
+/* FOOTER */
+footer{
+padding:15px;
+color:#aaa;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAME -->
+<div class="header">
+KS Mobile Repairing Service
+</div>
+
+<!-- 🔥 POSTER (FIXED) -->
+<div class="poster">
+<img src="./poster.png" alt="poster not found">
+</div>
+
+<!-- FOLLOW BUTTON -->
+<div class="follow">
+<p>🔥 Latest offers ke liye follow kare</p>
+<a href="https://instagram.com/ks.mobile.repair">
+📸 Follow on Instagram
+</a>
+</div>
+
+<!-- HOME -->
+<div id="home">
+
+<!-- SERVICES -->
+<div class="section">
+<h3>All Mobile Repairing Services</h3>
+
+<div class="grid">
+
+<div class="card" onclick="openDetail('Screen Replacement',
+'✔ Broken Screen Replace\n✔ Touch Fix\n✔ LCD Change\n✔ Fast Service (30 Min)')">📱 Screen</div>
+
+<div class="card" onclick="openDetail('Battery Replacement',
+'✔ Battery Backup Fix\n✔ New Battery Install\n✔ Warranty Available')">🔋 Battery</div>
+
+<div class="card" onclick="openDetail('Water Damage',
+'✔ Full Cleaning\n✔ IC Repair\n✔ Data Safe')">💧 Water</div>
+
+<div class="card" onclick="openDetail('Charging Repair',
+'✔ Charging Port Fix\n✔ Fast Charging Issue')">🔌 Charging</div>
+
+<div class="card" onclick="openDetail('Mic & Speaker',
+'✔ Mic Fix\n✔ Speaker Issue Solve')">🎤 Mic/Speaker</div>
+
+<div class="card" onclick="openDetail('Software Repair',
+'✔ Update\n✔ Flashing\n✔ FRP Unlock\n✔ Dead Fix')">⚙ Software</div>
+
+<div class="card" onclick="openDetail('Network Problem',
+'✔ No Signal\n✔ SIM Issue Fix')">📶 Network</div>
+
+<div class="card" onclick="openDetail('Unlock Service',
+'✔ Pattern Unlock\n✔ Password Remove')">🔒 Unlock</div>
+
+</div>
+</div>
+
+<!-- ACCESSORIES -->
+<div class="section">
+<h3>Accessories Available</h3>
+
+<div class="grid">
+
+<div class="card" onclick="openDetail('Earphones','✔ Clear Sound\n₹199')">🎧 Earphones</div>
+
+<div class="card" onclick="openDetail('Charger','✔ Fast Charging\n₹299')">🔌 Charger</div>
+
+<div class="card" onclick="openDetail('Speaker','✔ Loud Sound\n₹499')">🔊 Speaker</div>
+
+<div class="card" onclick="openDetail('Glass Guard','✔ Protection\n₹99')">🛡 Glass</div>
+
+<div class="card" onclick="openDetail('Neckband','✔ Bluetooth\n₹799')">🎧 Neckband</div>
+
+<div class="card" onclick="openDetail('Airbuds','✔ Wireless\n₹999')">🎧 Airbuds</div>
+
+</div>
+</div>
+
+<!-- SOCIAL -->
+<div class="social">
+
+<a href="https://instagram.com/ks.mobile.repair">
+📸 Instagram
+</a>
+
+<a href="https://youtube.com/@ks.mobile.repair?si=SudGe7ciCsL7JQBF">
+▶️ YouTube
+</a>
+
+</div>
+
+</div>
+
+<!-- DETAIL PAGE -->
+<div id="detail">
+
+<div class="detail-box">
+
+<h2 id="title"></h2>
+
+<p id="desc" style="white-space:pre-line;"></p>
+
+<p>📩 Instagram par DM kare</p>
+
+<a class="btn" href="https://instagram.com/ks.mobile.repair">
+DM on Instagram
+</a>
+
+<br><br>
+
+<button class="btn" onclick="goBack()">⬅ Back</button>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+📸 @ks.mobile.repair  
+<br>
+🔧 KS Mobile Repairing Service  
+</footer>
+
+<script>
+function openDetail(t,d){
+document.getElementById("home").style.display="none";
+document.getElementById("detail").style.display="block";
+
+document.getElementById("title").innerText=t;
+document.getElementById("desc").innerText=d;
+}
+
+function goBack(){
+document.getElementById("home").style.display="block";
+document.getElementById("detail").style.display="none";
+}
+</script>
+
+</body>
+</html>
